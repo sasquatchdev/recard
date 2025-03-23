@@ -1,6 +1,10 @@
+use serde::Serialize;
+use sqlx::prelude::FromRow;
+
 use super::deck::DeckUUID;
 
 /// The `Card` struct represents a single flashcard.
+#[derive(Debug, Clone, Serialize, FromRow)]
 pub struct Card {
     /// Unique Identifier by `uuid` crate.
     pub uuid: String,

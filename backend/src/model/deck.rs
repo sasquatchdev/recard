@@ -1,7 +1,11 @@
+use serde::Serialize;
+use sqlx::prelude::FromRow;
+
 use super::{card::CardUUID, user::UserUUID};
 
 /// The `Deck` struct represents a collection of
 /// flashcards which can be accessed together.
+#[derive(Debug, Clone, Serialize, FromRow)]
 pub struct Deck {
     /// Unique Identifier by `uuid` crate.
     pub uuid: String,

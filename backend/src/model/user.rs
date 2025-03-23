@@ -1,7 +1,11 @@
+use serde::Serialize;
+use sqlx::prelude::FromRow;
+
 use super::deck::DeckUUID;
 
 /// The `User` struct represents a user of
 /// the application.
+#[derive(Debug, Clone, Serialize, FromRow)]
 pub struct User {
     /// Unique Identifier by `uuid` crate.
     pub uuid: String,
